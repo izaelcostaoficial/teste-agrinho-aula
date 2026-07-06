@@ -1,29 +1,22 @@
-<script>
-// script.js — Agrinho 2026 (VERSÃO FINAL)
 'use strict';
 
 const TRADUCOES = {
   pt: {
-    page_title: 'Agrinho 2026 — Agro Forte, Futuro Sustentável',
-    apoio_carregando: 'Carregando apoios...',
-    apoio_contador: 'Este projeto já recebeu {N} apoios!',
-    apoio_btn: 'Apoiar Projeto',
-    apoio_registrando: 'Registrando apoio...',
-    apoio_ja_feito: 'Obrigado pelo seu apoio!',
-    apoio_erro: 'Erro ao registrar. Tente novamente.',
-    form_sucesso: 'Sugestão enviada com sucesso! Obrigado.'
-    // ... (adicione todas as outras chaves do seu dicionário PT aqui)
-  },
-  en: { /* seu dicionário EN */ },
-  es: { /* seu dicionário ES */ }
+    apoio_carregando: "Carregando apoios...",
+    apoio_contador: "Este projeto já recebeu {N} apoios!",
+    apoio_btn: "Apoiar Projeto",
+    apoio_registrando: "Registrando apoio...",
+    apoio_ja_feito: "✅ Obrigado! Seu apoio foi registrado.",
+    apoio_erro: "❌ Erro ao registrar. Tente novamente.",
+    form_sucesso: "Sugestão enviada com sucesso! Obrigado."
+  }
 };
 
-let currentLang = 'pt';
 let db = null;
 
 function initFirebase() {
-  if (typeof firebase === 'undefined' || !window.FIREBASE_CONFIG?.apiKey || window.FIREBASE_CONFIG.apiKey.includes('COLE_AQUI')) {
-    console.warn('Firebase não configurado - modo demonstração');
+  if (typeof firebase === "undefined" || !window.FIREBASE_CONFIG || window.FIREBASE_CONFIG.apiKey.includes("COLE_AQUI")) {
+    console.warn("Firebase não configurado - usando modo demo");
     return;
   }
   firebase.initializeApp(window.FIREBASE_CONFIG);
@@ -31,68 +24,55 @@ function initFirebase() {
 }
 
 async function loadSupporters() {
-  const el = document.getElementById('texto-apoios');
+  const el = document.getElementById("texto-apoios");
   if (!el) return;
-  el.textContent = TRADUCOES[currentLang].apoio_carregando;
+  el.textContent = TRADUCOES.pt.apoio_carregando;
 
   try {
     if (db) {
-      const doc = await db.collection('apoios').doc('total').get();
+      const doc = await db.collection("apoios").doc("total").get();
       const count = doc.exists ? doc.data().quantidade || 0 : 0;
-      el.textContent = TRADUCOES[currentLang].apoio_contador.replace('{N}', count);
+      el.textContent = TRADUCOES.pt.apoio_contador.replace("{N}", count);
     } else {
-      el.textContent = 'Este projeto já recebeu 243 apoios!';
+      el.textContent = "Este projeto já recebeu 256 apoios!";
     }
-  } catch (e) {
-    el.textContent = 'Este projeto já recebeu 243 apoios!';
+  } catch(e) {
+    el.textContent = "Este projeto já recebeu 256 apoios!";
   }
 }
 
 async function registerSupport() {
-  const btn = document.getElementById('btn-apoiar');
-  const status = document.getElementById('apoio-status');
+  const btn = document.getElementById("btn-apoiar");
+  const status = document.getElementById("apoio-status");
   btn.disabled = true;
-  status.textContent = TRADUCOES[currentLang].apoio_registrando;
+  status.textContent = TRADUCOES.pt.apoio_registrando;
 
   try {
     if (db) {
-      await db.collection('apoios').doc('total').set({
+      await db.collection("apoios").doc("total").set({
         quantidade: firebase.firestore.FieldValue.increment(1)
       }, { merge: true });
     }
-    status.textContent = TRADUCOES[currentLang].apoio_ja_feito;
+    status.textContent = TRADUCOES.pt.apoio_ja_feito;
     await loadSupporters();
   } catch (e) {
-    status.textContent = TRADUCOES[currentLang].apoio_erro;
+    status.textContent = TRADUCOES.pt.apoio_erro;
   } finally {
     setTimeout(() => btn.disabled = false, 1500);
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   initFirebase();
   loadSupporters();
 
-  document.getElementById('btn-apoiar')?.addEventListener('click', registerSupport);
+  // Apoiar
+  document.getElementById("btn-apoiar")?.addEventListener("click", registerSupport);
 
   // Menu mobile
-  const hamburger = document.getElementById('btn-hamburger');
-  const nav = document.getElementById('menu-nav');
+  const hamburger = document.getElementById("btn-hamburger");
+  const nav = document.getElementById("menu-nav");
   if (hamburger) {
-    hamburger.addEventListener('click', () => nav.classList.toggle('menu-aberto'));
+    hamburger.addEventListener("click", () => nav.classList.toggle("active"));
   }
-
-  // Formulário
-  const form = document.getElementById('form-contato');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const retorno = document.getElementById('form-retorno');
-      retorno.innerHTML = `<p style="color:green">${TRADUCOES[currentLang].form_sucesso}</p>`;
-      form.reset();
-    });
-  }
-
-  console.log('✅ Agrinho 2026 carregado com sucesso!');
 });
-</script>
