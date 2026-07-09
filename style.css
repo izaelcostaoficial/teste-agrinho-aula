@@ -1,89 +1,40 @@
 :root {
   --color-primary: #2e7d32;
+  --color-accent: #ff9800;
   --color-bg: #f5f9f7;
   --color-text: #1a1a1a;
-  --color-card: #ffffff;
+  --gradiente-hero: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
 }
 
 body.tema-branco {
   --color-bg: #ffffff;
   --color-text: #000000;
-  --color-card: #f0f0f0;
-  --color-primary: #1b5e20;
 }
 
 body.tema-preto {
   --color-bg: #000000;
   --color-text: #ffffff;
-  --color-card: #1a1a1a;
   --color-primary: #ffee58;
+  --gradiente-hero: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
-  transition: all 0.3s ease;
   margin: 0;
+  transition: all 0.3s ease;
 }
 
-h1, h2, h3, p, span, label {
-  color: var(--color-text);
-}
-
-#barra-acessibilidade {
-  background: #1b5e20;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.btn-acesso {
-  background: rgba(255,255,255,0.2);
-  border: 1px solid white;
+#hero {
+  background: var(--gradiente-hero);
   color: white;
-  cursor: pointer;
-  padding: 5px 10px;
-  border-radius: 4px;
+  text-align: center;
+  padding: 100px 20px;
 }
 
-.btn-acesso.btn-ativo {
-  background: white;
-  color: #1b5e20;
-  font-weight: bold;
-}
-
-#cabecalho {
-  background: var(--color-card);
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-#menu-nav {
-  display: flex;
-  gap: 15px;
-}
-
-#menu-nav.active {
-  display: flex;
-  flex-direction: column;
-}
-
-.btn-apoiar, .btn-enviar {
-  background: var(--color-primary);
-  color: white;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-body.tema-preto .btn-apoiar, body.tema-preto .btn-enviar {
-  color: #000; /* Texto preto no botão amarelo no modo escuro */
+.secao-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
