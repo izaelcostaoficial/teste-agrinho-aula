@@ -5,6 +5,3 @@
 2. **Acessibilidade Visual**: Modos Padrão, Branco e Preto com alto contraste.
 3. **Contador de Apoios**: Funciona via Firebase ou LocalStorage (fallback).
 4. **Design Responsivo**: Adaptado para celulares e tablets.
-
-## Como configurar o Firebase:
-Abra o arquivo `firebase-config.js` e substitua os valores pelos do seu console do Firebase. Se não configurar, o site usará o armazenamento local automaticamente.
