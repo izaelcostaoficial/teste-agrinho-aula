@@ -6,50 +6,34 @@
   <title id="page-title">Agrinho 2026 — Agro Forte, Futuro Sustentável</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="link-pular" href="#conteudo-principal" id="link-pular">Pular para o conteúdo principal</a>
-
-  <div id="barra-acessibilidade" role="toolbar" aria-label="Barra de acessibilidade">
+  <div id="barra-acessibilidade">
     <div class="acesso-grupo">
-      <span class="acesso-label" id="label-idioma">Idioma:</span>
-      <button class="btn-acesso btn-ativo" id="btn-pt" type="button">PT</button>
-      <button class="btn-acesso" id="btn-en" type="button">EN</button>
-      <button class="btn-acesso" id="btn-es" type="button">ES</button>
+      <span id="label-idioma">Idioma:</span>
+      <button id="btn-pt" class="btn-acesso btn-ativo">PT</button>
+      <button id="btn-en" class="btn-acesso">EN</button>
+      <button id="btn-es" class="btn-acesso">ES</button>
     </div>
     <div class="acesso-grupo">
-      <span class="acesso-label" id="label-visual">Visual:</span>
-      <button class="btn-acesso btn-ativo" id="btn-colorido" type="button">Padrão</button>
-      <button class="btn-acesso" id="btn-branco" type="button">L/W</button>
-      <button class="btn-acesso" id="btn-preto" type="button">D/B</button>
+      <span id="label-visual">Visual:</span>
+      <button id="btn-colorido" class="btn-acesso btn-ativo">Padrão</button>
+      <button id="btn-branco" class="btn-acesso">L/W</button>
+      <button id="btn-preto" class="btn-acesso">D/B</button>
     </div>
     <div class="acesso-grupo">
-      <span class="acesso-label" id="label-texto">Texto:</span>
-      <button class="btn-acesso" id="btn-Amais" type="button">A+</button>
-      <button class="btn-acesso" id="btn-Amenos" type="button">A-</button>
-    </div>
-    <div class="acesso-grupo">
-      <button class="btn-acesso" id="btn-narrar" type="button">🔊 Narrar Site</button>
+      <button id="btn-narrar" class="btn-acesso">🔊 Narrar Site</button>
     </div>
   </div>
 
   <header id="cabecalho">
     <div class="header-inner">
-      <a href="#hero" class="logo-area">
-        <div class="logo-icone-svg">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="18" cy="18" r="18" fill="#2e7d32"/>
-            <path d="M18 28 C18 28 8 20 8 13 C8 9.13 12.13 6 18 6 C23.87 6 28 9.13 28 13 C28 20 18 28 18 28Z" fill="#a5d6a7"/>
-            <path d="M18 28 L18 14 M18 18 L13 14 M18 20 L22 16" stroke="#1b5e20" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="logo-texto">
-          <span class="logo-titulo" id="logo-titulo">Agrinho 2026</span>
-          <span class="logo-subtitulo" id="logo-subtitulo">SENAR · Paraná</span>
-        </div>
-      </a>
+      <div class="logo-texto">
+        <span class="logo-titulo" id="logo-titulo">🌱 Agrinho 2026</span>
+        <span class="logo-subtitulo" id="logo-subtitulo">SENAR · Paraná</span>
+      </div>
       <nav id="menu-nav">
         <a href="#sobre" id="nav-sobre">Sobre</a>
         <a href="#tema" id="nav-tema">Tema</a>
@@ -58,74 +42,27 @@
         <a href="#apoio" id="nav-apoio">Apoiar</a>
         <a href="#contato" id="nav-contato">Contato</a>
       </nav>
-      <button class="btn-menu-mobile" id="btn-hamburger" type="button">&#9776;</button>
     </div>
   </header>
 
-  <main id="conteudo-principal">
-    <section id="hero">
-      <div class="hero-overlay">
-        <div class="hero-conteudo">
-          <p class="hero-eyebrow" id="hero-eyebrow">Concurso Agrinho 2026</p>
-          <h1 id="hero-titulo">Agro forte,  
-futuro sustentável</h1>
-          <p class="hero-subtitulo" id="hero-subtitulo">Equilíbrio entre produção e meio ambiente</p>
-          <div class="hero-botoes">
-            <a href="#sobre" class="btn-hero btn-primario" id="hero-btn-conhecer">Conhecer o Projeto</a>
-            <a href="#apoio" class="btn-hero btn-secundario" id="hero-btn-apoiar">👍 Apoiar Agora</a>
-          </div>
-        </div>
+  <section id="hero">
+    <div class="hero-conteudo">
+      <p id="hero-eyebrow">Concurso Agrinho 2026</p>
+      <h1 id="hero-titulo">Agro forte, futuro sustentável</h1>
+      <p id="hero-subtitulo">Equilíbrio entre produção e meio ambiente</p>
+      <div class="hero-botoes">
+        <a href="#sobre" class="btn-hero btn-primario" id="hero-btn-conhecer">Conhecer o Projeto</a>
+        <a href="#apoio" class="btn-hero btn-secundario" id="hero-btn-apoiar">👍 Apoiar Agora</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Outras seções (Sobre, Tema, Tecnologias, Vídeo ) seguem o mesmo padrão profissional -->
-
-    <section id="apoio">
-      <div class="secao-inner">
-        <h2 id="apoio-titulo">Apoie Este Projeto</h2>
-        <div class="apoio-card">
-          <p id="texto-apoios" class="texto-apoios">Carregando apoios...</p>
-          <button id="btn-apoiar" class="btn-apoiar">
-            <span id="apoio-btn">👍 Apoiar Projeto</span>
-          </button>
-          <p id="apoio-status" class="apoio-status"></p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contato" class="secao-destaque">
-      <div class="secao-inner">
-        <h2 id="contato-titulo">Deixe sua Sugestão</h2>
-        <form id="form-contato" class="form-grid">
-          <div class="form-grupo">
-            <label for="campo-nome" id="label-nome">Nome completo</label>
-            <input type="text" id="campo-nome" required />
-            <span class="form-erro" id="erro-nome"></span>
-          </div>
-          <div class="form-grupo form-grupo-largo">
-            <label for="campo-mensagem" id="label-mensagem">Sua sugestão</label>
-            <textarea id="campo-mensagem" required rows="5"></textarea>
-            <span class="form-erro" id="erro-msg"></span>
-          </div>
-          <button class="btn-enviar" id="btn-enviar" type="submit">
-            <span>✉️ Enviar Sugestão</span>
-          </button>
-          <div id="form-retorno"></div>
-        </form>
-      </div>
-    </section>
-  </main>
+  <!-- Outras seções aqui mantendo a mesma estrutura de IDs para tradução -->
 
   <footer id="rodape">
-    <div class="rodape-inner">
-      <strong id="rodape-titulo">Agrinho 2026</strong>
-      <p class="rodape-copy" id="rodape-copy">© 2026 Concurso Agrinho — SENAR Paraná — Colégio Estadual Vinícius de Morais (PR).</p>
-    </div>
+    <p id="rodape-copy">© 2026 Concurso Agrinho — SENAR Paraná — Colégio Estadual Vinícius de Morais (PR ). Projeto educativo sem fins lucrativos.</p>
   </footer>
 
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
-  <script src="firebase-config.js"></script>
   <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
