@@ -1,42 +1,38 @@
 /**
  * ════════════════════════════════════════════════════════════════
- * SISTEMA DE TRADUÇÃO COMPLETO
- * Português (PT), Inglês (EN) e Espanhol (ES)
+ * SISTEMA DE TRADUÇÃO COMPLETO - AGRINHO 2026
+ * Colégio Estadual Vinícius de Morais (PR)
  * ════════════════════════════════════════════════════════════════
  */
 
 const TRANSLATIONS = {
   pt: {
-    // Logo e Header
+    'page-title': 'Agrinho 2026 — Agro Forte, Futuro Sustentável',
+    'link-pular': 'Pular para o conteúdo principal',
+    'label-idioma': 'Idioma:',
+    'label-visual': 'Visual:',
+    'label-texto': 'Texto:',
+    'label-audio': 'Áudio:',
+    'btn-colorido': 'Padrão',
+    'btn-branco': 'L/W',
+    'btn-preto': 'D/B',
+    'btn-Amais': 'A+',
+    'btn-Amenos': 'A-',
+    'btn-narrar': 'Narrar Site',
     'logo-titulo': 'Agrinho 2026',
     'logo-subtitulo': 'SENAR · Paraná',
-    
-    // Navegação
+    'btn-hamburger': 'Abrir menu',
     'nav-sobre': 'Sobre',
     'nav-tema': 'Tema',
     'nav-tecnologias': 'Tecnologias',
     'nav-video': 'Vídeo',
     'nav-apoio': 'Apoiar',
     'nav-contato': 'Contato',
-    
-    // Barra de Acessibilidade
-    'label-idioma': 'Idioma:',
-    'label-visual': 'Visual:',
-    'label-texto': 'Texto:',
-    'label-audio': 'Áudio:',
-    'btn-visual-padrao': 'Padrão',
-    'btn-visual-claro': 'L/W',
-    'btn-visual-escuro': 'D/B',
-    'btn-narrar': 'Narrar Site',
-    
-    // Hero
     'hero-eyebrow': 'Concurso Agrinho 2026',
     'hero-titulo': 'Agro forte, futuro sustentável',
     'hero-subtitulo': 'Equilíbrio entre produção e meio ambiente',
     'hero-btn-conhecer': 'Conhecer o Projeto',
     'hero-btn-apoiar': 'Apoiar Agora',
-    
-    // Sobre
     'sobre-eyebrow': 'O Programa',
     'sobre-titulo': 'O que é o Agrinho?',
     'sobre-p1': 'O Programa Agrinho é uma iniciativa do SENAR Paraná que existe há mais de 25 anos, conectando a educação do campo e da cidade por meio de temas como saúde, cidadania e sustentabilidade.',
@@ -45,8 +41,6 @@ const TRANSLATIONS = {
     'estat-anos': 'Anos de Programa',
     'estat-municipios': 'Municípios Participantes',
     'estat-alunos': 'Alunos Impactados',
-    
-    // Tema
     'tema-eyebrow': 'O Desafio',
     'tema-titulo': 'Produção e Natureza em Equilíbrio',
     'tema-intro': 'O Brasil é um dos maiores produtores de alimentos do mundo. Mas como garantir que essa produção respeite o planeta? Três pilares sustentam essa transformação.',
@@ -56,8 +50,6 @@ const TRANSLATIONS = {
     'pilar2-desc': 'Resíduos agrícolas como palha e esterco viram energia, compostagem e biofertilizantes. Nada se perde: tudo se transforma em mais produção com menos impacto ambiental.',
     'pilar3-titulo': 'Cidadania Ambiental',
     'pilar3-desc': 'O campo precisa de guardiões. Desde a escola, cada aluno aprende que escolhas de consumo, descarte correto do lixo e preservação de nascentes são atos de cidadania.',
-    
-    // Tecnologias
     'tec-eyebrow': 'Inovação no Campo',
     'tec-titulo': 'Tecnologias Sustentáveis',
     'tec-intro': 'O agricultor moderno conta com ferramentas que antes pareciam ficção científica. Veja três exemplos que já transformam o agro brasileiro:',
@@ -70,26 +62,20 @@ const TRANSLATIONS = {
     'solar-titulo': 'Energia Solar Fotovoltaica Rural',
     'solar-text': 'Painéis solares instalados em propriedades rurais geram eletricidade limpa diretamente do sol, eliminando ou reduzindo drasticamente a conta de energia e as emissões de carbono.',
     'solar-credito': 'Foto: Pexels / Foto de Energia Solar Rural',
-    
-    // Vídeo
     'video-eyebrow': 'Assista',
     'video-titulo': 'O Campo em Movimento',
     'video-intro': 'Veja a beleza e a força do agronegócio sustentável através das imagens abaixo.',
     'video-credito': 'Vídeo por: Fernando Sanchez Aranguren (Pexels)',
     'video-fallback': 'Seu navegador não suporta reprodução de vídeo HTML5.',
-    
-    // Apoio
     'apoio-eyebrow': 'Participe',
     'apoio-titulo': 'Apoie Este Projeto',
     'apoio-intro': 'Acredita num agro mais sustentável? Demonstre seu apoio clicando abaixo!',
     'apoio-carregando': 'Carregando apoios...',
     'apoio-contador': 'Este projeto já recebeu {N} apoios!',
-    'apoio-btn-txt': 'Apoiar Projeto',
+    'apoio-btn': 'Apoiar Projeto',
     'apoio-registrando': 'Registrando apoio...',
     'apoio-ja-feito': '✅ Obrigado! Seu apoio foi registrado.',
     'apoio-erro': '❌ Erro ao registrar. Tente novamente.',
-    
-    // Contato
     'contato-eyebrow': 'Fale Conosco',
     'contato-titulo': 'Deixe sua Sugestão',
     'contato-intro': 'Tem uma ideia para tornar o projeto ainda melhor? Compartilhe com a gente!',
@@ -99,44 +85,47 @@ const TRANSLATIONS = {
     'placeholder-nome': 'Digite seu nome completo',
     'placeholder-email': 'seuemail@exemplo.com',
     'placeholder-mensagem': 'Escreva sua sugestão aqui...',
-    'btn-enviar-txt': 'Enviar Sugestão',
+    'btn-enviar': 'Enviar Sugestão',
     'erro-nome': 'Por favor, informe seu nome completo.',
     'erro-email': 'E-mail inválido.',
     'erro-msg': 'A sugestão não pode ficar vazia.',
     'form-sucesso': '✅ Obrigado! Sua sugestão foi enviada com sucesso.',
-    
-    // Rodapé
     'rodape-titulo': 'Agrinho 2026',
     'rodape-subtitulo': 'SENAR · Paraná',
+    'rodape-nav-sobre': 'Sobre',
+    'rodape-nav-tema': 'Tema',
+    'rodape-nav-tecnologias': 'Tecnologias',
+    'rodape-nav-video': 'Vídeo',
+    'rodape-nav-contato': 'Contato',
     'rodape-copy': '© 2026 Concurso Agrinho — SENAR Paraná — Colégio Estadual Vinícius de Morais (PR). Projeto educativo sem fins lucrativos.',
   },
-  
   en: {
+    'page-title': 'Agrinho 2026 — Strong Agriculture, Sustainable Future',
+    'link-pular': 'Skip to main content',
+    'label-idioma': 'Language:',
+    'label-visual': 'Visual:',
+    'label-texto': 'Text:',
+    'label-audio': 'Audio:',
+    'btn-colorido': 'Default',
+    'btn-branco': 'L/W',
+    'btn-preto': 'D/B',
+    'btn-Amais': 'A+',
+    'btn-Amenos': 'A-',
+    'btn-narrar': 'Narrate Site',
     'logo-titulo': 'Agrinho 2026',
     'logo-subtitulo': 'SENAR · Paraná',
-    
+    'btn-hamburger': 'Open menu',
     'nav-sobre': 'About',
     'nav-tema': 'Theme',
     'nav-tecnologias': 'Technologies',
     'nav-video': 'Video',
     'nav-apoio': 'Support',
     'nav-contato': 'Contact',
-    
-    'label-idioma': 'Language:',
-    'label-visual': 'Visual:',
-    'label-texto': 'Text:',
-    'label-audio': 'Audio:',
-    'btn-visual-padrao': 'Default',
-    'btn-visual-claro': 'L/W',
-    'btn-visual-escuro': 'D/B',
-    'btn-narrar': 'Narrate Site',
-    
     'hero-eyebrow': 'Agrinho Contest 2026',
     'hero-titulo': 'Strong Agriculture, Sustainable Future',
     'hero-subtitulo': 'Balance between production and environment',
     'hero-btn-conhecer': 'Learn About the Project',
     'hero-btn-apoiar': 'Support Now',
-    
     'sobre-eyebrow': 'The Program',
     'sobre-titulo': 'What is Agrinho?',
     'sobre-p1': 'The Agrinho Program is an initiative by SENAR Paraná that has existed for over 25 years, connecting rural and urban education through themes such as health, citizenship and sustainability.',
@@ -145,7 +134,6 @@ const TRANSLATIONS = {
     'estat-anos': 'Years of Program',
     'estat-municipios': 'Participating Municipalities',
     'estat-alunos': 'Students Impacted',
-    
     'tema-eyebrow': 'The Challenge',
     'tema-titulo': 'Production and Nature in Balance',
     'tema-intro': 'Brazil is one of the world\'s largest food producers. But how can we ensure that this production respects the planet? Three pillars support this transformation.',
@@ -155,7 +143,6 @@ const TRANSLATIONS = {
     'pilar2-desc': 'Agricultural waste such as straw and manure become energy, compost and biofertilizers. Nothing is wasted: everything is transformed into more production with less environmental impact.',
     'pilar3-titulo': 'Environmental Citizenship',
     'pilar3-desc': 'The countryside needs guardians. From school onwards, every student learns that consumption choices, proper waste disposal and spring preservation are acts of citizenship.',
-    
     'tec-eyebrow': 'Innovation in the Field',
     'tec-titulo': 'Sustainable Technologies',
     'tec-intro': 'The modern farmer has tools that once seemed like science fiction. See three examples that are already transforming Brazilian agriculture:',
@@ -168,23 +155,20 @@ const TRANSLATIONS = {
     'solar-titulo': 'Rural Photovoltaic Solar Energy',
     'solar-text': 'Solar panels installed on rural properties generate clean electricity directly from the sun, drastically eliminating or reducing energy bills and carbon emissions.',
     'solar-credito': 'Photo: Pexels / Rural Solar Energy Photo',
-    
     'video-eyebrow': 'Watch',
     'video-titulo': 'The Countryside in Motion',
     'video-intro': 'See the beauty and strength of sustainable agribusiness through the images below.',
     'video-credito': 'Video by: Fernando Sanchez Aranguren (Pexels)',
     'video-fallback': 'Your browser does not support HTML5 video playback.',
-    
     'apoio-eyebrow': 'Participate',
     'apoio-titulo': 'Support This Project',
     'apoio-intro': 'Believe in more sustainable agriculture? Show your support by clicking below!',
     'apoio-carregando': 'Loading supports...',
     'apoio-contador': 'This project has already received {N} supporters!',
-    'apoio-btn-txt': 'Support Project',
+    'apoio-btn': 'Support Project',
     'apoio-registrando': 'Registering support...',
     'apoio-ja-feito': '✅ Thank you! Your support has been registered.',
     'apoio-erro': '❌ Error registering. Try again.',
-    
     'contato-eyebrow': 'Get in Touch',
     'contato-titulo': 'Leave Your Suggestion',
     'contato-intro': 'Have an idea to make the project even better? Share it with us!',
@@ -194,91 +178,90 @@ const TRANSLATIONS = {
     'placeholder-nome': 'Enter your full name',
     'placeholder-email': 'youremail@example.com',
     'placeholder-mensagem': 'Write your suggestion here...',
-    'btn-enviar-txt': 'Send Suggestion',
+    'btn-enviar': 'Send Suggestion',
     'erro-nome': 'Please enter your full name.',
     'erro-email': 'Invalid email.',
     'erro-msg': 'The suggestion cannot be empty.',
     'form-sucesso': '✅ Thank you! Your suggestion has been sent successfully.',
-    
     'rodape-titulo': 'Agrinho 2026',
     'rodape-subtitulo': 'SENAR · Paraná',
+    'rodape-nav-sobre': 'About',
+    'rodape-nav-tema': 'Theme',
+    'rodape-nav-tecnologias': 'Technologies',
+    'rodape-nav-video': 'Video',
+    'rodape-nav-contato': 'Contact',
     'rodape-copy': '© 2026 Agrinho Contest — SENAR Paraná — Vinícius de Morais State School (PR). Educational project for non-profit purposes.',
   },
-  
   es: {
+    'page-title': 'Agrinho 2026 — Agricultura Fuerte, Futuro Sostenible',
+    'link-pular': 'Saltar al contenido principal',
+    'label-idioma': 'Idioma:',
+    'label-visual': 'Visual:',
+    'label-texto': 'Texto:',
+    'label-audio': 'Audio:',
+    'btn-colorido': 'Predeterminado',
+    'btn-branco': 'L/W',
+    'btn-preto': 'D/B',
+    'btn-Amais': 'A+',
+    'btn-Amenos': 'A-',
+    'btn-narrar': 'Narrar Sitio',
     'logo-titulo': 'Agrinho 2026',
     'logo-subtitulo': 'SENAR · Paraná',
-    
+    'btn-hamburger': 'Abrir menú',
     'nav-sobre': 'Acerca de',
     'nav-tema': 'Tema',
     'nav-tecnologias': 'Tecnologías',
     'nav-video': 'Video',
     'nav-apoio': 'Apoyar',
     'nav-contato': 'Contacto',
-    
-    'label-idioma': 'Idioma:',
-    'label-visual': 'Visual:',
-    'label-texto': 'Texto:',
-    'label-audio': 'Audio:',
-    'btn-visual-padrao': 'Predeterminado',
-    'btn-visual-claro': 'L/W',
-    'btn-visual-escuro': 'D/B',
-    'btn-narrar': 'Narrar Sitio',
-    
     'hero-eyebrow': 'Concurso Agrinho 2026',
     'hero-titulo': 'Agricultura fuerte, futuro sostenible',
     'hero-subtitulo': 'Equilibrio entre producción y medio ambiente',
-    'hero-btn-conocer': 'Conocer el Proyecto',
+    'hero-btn-conhecer': 'Conocer el Proyecto',
     'hero-btn-apoiar': 'Apoyar Ahora',
-    
     'sobre-eyebrow': 'El Programa',
     'sobre-titulo': '¿Qué es Agrinho?',
-    'sobre-p1': 'El Programa Agrinho es una iniciativa de SENAR Paraná que existe desde hace más de 25 años, conectando la educación rural y urbana a través de temas como salud, ciudadanía y sostenibilidad.',
+    'sobre-p1': 'El Programa Agrinho es uma iniciativa de SENAR Paraná que existe desde hace más de 25 años, conectando la educación rural y urbana a través de temas como salud, ciudadanía y sostenibilidad.',
     'sobre-p2': 'En 2026, el tema invita a los estudiantes a reflexionar sobre cómo la agroindustria brasileña puede ser económicamente fuerte sin comprometer los recursos naturales para las generaciones futuras.',
     'sobre-p3': 'Este sitio web fue creado como un proyecto de participación de la Escuela Estatal Vinícius de Morais (PR), explorando conceptos de producción sostenible, innovación tecnológica y responsabilidad ambiental.',
     'estat-anos': 'Años de Programa',
     'estat-municipios': 'Municipios Participantes',
     'estat-alunos': 'Estudiantes Impactados',
-    
     'tema-eyebrow': 'El Desafío',
-    'tema-titulo': 'Producción y Naturaleza en Equilibrio',
-    'tema-intro': 'Brasil es uno de los mayores productores de alimentos del mundo. Pero ¿cómo garantizar que esta producción respete el planeta? Tres pilares apoyan esta transformación.',
-    'pilar1-titulo': 'Agricultura Responsable',
-    'pilar1-desc': 'Prácticas como siembra directa, rotación de cultivos e integración de cultivo-ganadería-bosque reducen la erosión del suelo, ahorran agua y aumentan la productividad sostenible.',
-    'pilar2-titulo': 'Economía Circular',
-    'pilar2-desc': 'Los residuos agrícolas como paja y estiércol se convierten en energía, compost y biofertilizantes. Nada se pierde: todo se transforma en más producción con menor impacto ambiental.',
+    'tema-titulo': 'Produção e Natureza em Equilíbrio',
+    'tema-intro': 'Brasil es uno de los mayores productores de alimentos do mundo. Pero ¿cómo garantir que essa produção respeite o planeta? Três pilares sustentam essa resposta:',
+    'pilar1-titulo': 'Agropecuária Responsável',
+    'pilar1-desc': 'Práticas como o plantio direto, rotação de culturas e integração lavoura-pecuária-floresta reduzem a erosão do solo, poupam água e aumentam a produtividade ao mesmo tempo.',
+    'pilar2-titulo': 'Economia Circular',
+    'pilar2-desc': 'Resíduos agrícolas como palha e esterco viram energia, compostagem e biofertilizantes. Nada se perde: tudo se transforma em mais produção com menos impacto ambiental.',
     'pilar3-titulo': 'Ciudadanía Ambiental',
-    'pilar3-desc': 'El campo necesita guardianes. Desde la escuela, cada estudiante aprende que las elecciones de consumo, la eliminación adecuada de residuos y la preservación de manantiales son actos de ciudadanía.',
-    
-    'tec-eyebrow': 'Innovación en el Campo',
-    'tec-titulo': 'Tecnologías Sostenibles',
-    'tec-intro': 'El agricultor moderno tiene herramientas que alguna vez parecían ciencia ficción. Vea tres ejemplos que ya están transformando la agricultura brasileña:',
-    'drone-titulo': 'Agricultura de Precisión con Drones',
-    'drone-text': 'Los drones equipados con cámaras multiespectrales vuelan sobre los cultivos e identifican áreas con deficiencias nutricionales, plagas o estrés hídrico con precisión milimétrica, reduciendo desperdicios.',
+    'pilar3-desc': 'El campo necesita guardianes. Desde la escuela, cada estudiante aprende que las elecciones de consumo, la eliminación adecuada de residuos e la preservación de manantiales son actos de ciudadanía concreta.',
+    'tec-eyebrow': 'Inovação no Campo',
+    'tec-titulo': 'Tecnologias Sustentáveis',
+    'tec-intro': 'El agricultor moderno tiene herramientas que antes parecían ciência ficção. Veja três exemplos que já transformam o agro brasileiro:',
+    'drone-titulo': 'Agricultura de Precisão com Drones',
+    'drone-text': 'Drones equipados com câmeras multiespectrais sobrevoam as lavouras e identificam áreas com deficiência nutricional, pragas ou estresse hídrico com precisão de centímetros.',
     'drone-credito': 'Foto: Pexels / Foto de Dron Agrícola',
     'irrigacao-titulo': 'Riego Inteligente por Goteo',
-    'irrigacao-text': 'El sistema de riego por goteo entrega agua directamente a la raíz de la planta, gota a gota, controlado por sensores de humedad del suelo conectados a la nube, ahorrando hasta el 60% de agua.',
+    'irrigacao-text': 'El sistema de riego por goteo entrega agua directamente a la raíz de la planta, gota a gota, controlado por sensores de humedad del suelo conectados a la internet.',
     'irrigacao-credito': 'Foto: Pexels / Foto de Riego por Goteo',
     'solar-titulo': 'Energía Solar Fotovoltaica Rural',
-    'solar-text': 'Los paneles solares instalados en propiedades rurales generan electricidad limpia directamente del sol, eliminando o reduciendo drásticamente las facturas de energía y las emisiones de carbono.',
+    'solar-text': 'Paneles solares instalados en propriedades rurais geram eletricidade limpa diretamente do sol, eliminando ou reduzindo drasticamente a conta de energia.',
     'solar-credito': 'Foto: Pexels / Foto de Energía Solar Rural',
-    
     'video-eyebrow': 'Ver',
-    'video-titulo': 'El Campo en Movimiento',
+    'video-titulo': 'El Campo en Movimento',
     'video-intro': 'Vea la belleza y la fuerza de la agroindustria sostenible a través de las imágenes a continuación.',
-    'video-credito': 'Video por: Fernando Sanchez Aranguren (Pexels)',
+    'video-credito': 'Video por: Fernando Sánchez Aranguren (Pexels)',
     'video-fallback': 'Su navegador no admite reproducción de video HTML5.',
-    
     'apoio-eyebrow': 'Participar',
     'apoio-titulo': 'Apoye Este Proyecto',
     'apoio-intro': '¿Cree en una agricultura más sostenible? ¡Muestre su apoyo haciendo clic a continuación!',
     'apoio-carregando': 'Cargando apoyos...',
-    'apoio-contador': '¡Este proyecto ya ha recibido {N} apoyos!',
-    'apoio-btn-txt': 'Apoyar Proyecto',
+    'apoio-contador': '¡Este projeto ya ha recibido {N} apoyos!',
+    'apoio-btn': 'Apoyar Projeto',
     'apoio-registrando': 'Registrando apoyo...',
     'apoio-ja-feito': '✅ ¡Gracias! Tu apoyo ha sido registrado.',
     'apoio-erro': '❌ Error al registrar. Intenta de nuevo.',
-    
     'contato-eyebrow': 'Contáctenos',
     'contato-titulo': 'Deje su Sugerencia',
     'contato-intro': '¿Tiene una idea para mejorar el proyecto? ¡Compártela con nosotros!',
@@ -288,14 +271,18 @@ const TRANSLATIONS = {
     'placeholder-nome': 'Ingrese su nombre completo',
     'placeholder-email': 'tuemail@ejemplo.com',
     'placeholder-mensagem': 'Escribe tu sugerencia aquí...',
-    'btn-enviar-txt': 'Enviar Sugerencia',
+    'btn-enviar': 'Enviar Sugerencia',
     'erro-nome': 'Por favor, ingrese su nombre completo.',
     'erro-email': 'Correo electrónico no válido.',
     'erro-msg': 'La sugerencia no puede estar vacía.',
     'form-sucesso': '✅ ¡Gracias! Tu sugerencia ha sido enviada con éxito.',
-    
     'rodape-titulo': 'Agrinho 2026',
     'rodape-subtitulo': 'SENAR · Paraná',
+    'rodape-nav-sobre': 'Sobre',
+    'rodape-nav-tema': 'Tema',
+    'rodape-nav-tecnologias': 'Tecnologías',
+    'rodape-nav-video': 'Vídeo',
+    'rodape-nav-contato': 'Contacto',
     'rodape-copy': '© 2026 Concurso Agrinho — SENAR Paraná — Escuela Estatal Vinícius de Morais (PR). Proyecto educativo sin fines de lucro.',
   }
 };
@@ -307,33 +294,28 @@ function applyTranslations() {
   const lang = localStorage.getItem('site_lang') || 'pt';
   const texts = TRANSLATIONS[lang] || TRANSLATIONS.pt;
   
-  // Itera por todos os elementos com id e aplica tradução
+  if (texts['page-title']) document.title = texts['page-title'];
+
   document.querySelectorAll('[id]').forEach(el => {
-    const key = el.id + '-txt';
+    const key = el.id;
     if (texts[key]) {
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = texts[key];
-      } else if (el.tagName === 'LABEL') {
-        el.textContent = texts[key];
+        const placeholderKey = 'placeholder-' + key.replace('campo-', '');
+        el.placeholder = texts[placeholderKey] || texts[key];
+      } else if (el.tagName === 'BUTTON') {
+        const span = el.querySelector('span');
+        if (span) span.textContent = texts[key];
+        else if (el.id === 'btn-hamburger') el.setAttribute('aria-label', texts[key]);
+        else if (el.classList.contains('btn-acesso') && !el.id.startsWith('btn-A')) el.textContent = texts[key];
       } else {
         el.textContent = texts[key];
       }
     }
   });
-  
-  // Tradução de labels específicos
-  const labelIdioma = document.getElementById('label-idioma');
-  const labelVisual = document.getElementById('label-visual');
-  const labelTexto = document.getElementById('label-texto');
-  const labelAudio = document.getElementById('label-audio');
-  
-  if (labelIdioma) labelIdioma.textContent = texts['label-idioma'] || 'Idioma:';
-  if (labelVisual) labelVisual.textContent = texts['label-visual'] || 'Visual:';
-  if (labelTexto) labelTexto.textContent = texts['label-texto'] || 'Texto:';
-  if (labelAudio) labelAudio.textContent = texts['label-audio'] || 'Áudio:';
+
+  document.querySelectorAll('[aria-label]').forEach(el => {
+    const key = el.id || el.getAttribute('data-i18n-aria');
+    if (key && texts[key]) el.setAttribute('aria-label', texts[key]);
+  });
 }
 
-// Exporta função para uso no script principal
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { TRANSLATIONS, applyTranslations };
-}
