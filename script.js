@@ -1,15 +1,15 @@
 'use strict';
 
 /**
- * ═══════════════════════════════════════════════════════════════════════════
+ * ════════════════════════════════════════════════════════════════
  * AGRINHO 2026 - SCRIPT PRINCIPAL
  * Sistema de Acessibilidade, Tradução, e Interações
- * ═══════════════════════════════════════════════════════════════════════════
+ * ════════════════════════════════════════════════════════════════
  */
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    1. VARIÁVEIS GLOBAIS
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 let db = null;
 let usingFirestore = false;
@@ -18,9 +18,9 @@ let registering = false;
 
 const REPO_RAW_APOIOS = 'https://raw.githubusercontent.com/izaelcostaoficial/teste-agrinho-aula/main/apoios.json';
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    2. FIREBASE INITIALIZATION
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Valida se a configuração do Firebase é válida
@@ -50,9 +50,9 @@ function initFirebase() {
   }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    3. SISTEMA DE SUPORTE/APOIO
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Busca arquivo de apoios JSON como fallback
@@ -76,7 +76,7 @@ async function loadSupporters() {
   if (!el) return;
 
   const translate = getTranslation;
-  el.textContent = translate('apoio_carregando') || 'Carregando apoios...';
+  el.textContent = translate('apoio-carregando') || 'Carregando apoios...';
 
   try {
     let count = 0;
@@ -86,7 +86,7 @@ async function loadSupporters() {
       try {
         const doc = await db.collection('apoios').doc('total').get();
         count = doc.exists ? (doc.data().quantidade || 0) : 0;
-        el.textContent = (translate('apoio_contador') || 'Este projeto já recebeu {N} apoios!').replace('{N}', String(count));
+        el.textContent = (translate('apoio-contador') || 'Este projeto já recebeu {N} apoios!').replace('{N}', String(count));
         return;
       } catch (e) {
         console.warn('Erro ao ler Firestore:', e.message);
@@ -97,16 +97,16 @@ async function loadSupporters() {
     const json = await fetchApoiosJsonFallback();
     if (json && typeof json.count === 'number') {
       count = json.count;
-      el.textContent = (translate('apoio_contador') || 'Este projeto já recebeu {N} apoios!').replace('{N}', String(count));
+      el.textContent = (translate('apoio-contador') || 'Este projeto já recebeu {N} apoios!').replace('{N}', String(count));
       return;
     }
 
     // Prioridade 3: localStorage local
     count = Number(localStorage.getItem('apoios_local_count') || 0);
-    el.textContent = (translate('apoio_contador') || 'Este projeto já recebeu {N} apoios!').replace('{N}', String(count));
+    el.textContent = (translate('apoio-contador') || 'Este projeto já recebeu {N} apoios!').replace('{N}', String(count));
   } catch (e) {
     console.error('Erro ao carregar apoios:', e);
-    el.textContent = (translate('apoio_contador') || 'Este projeto já recebeu {N} apoios!').replace('{N}', '0');
+    el.textContent = (translate('apoio-contador') || 'Este projeto já recebeu {N} apoios!').replace('{N}', '0');
   }
 }
 
@@ -122,7 +122,7 @@ async function registerSupport() {
   const translate = getTranslation;
 
   if (btn) btn.disabled = true;
-  if (status) status.textContent = translate('apoio_registrando') || 'Registrando apoio...';
+  if (status) status.textContent = translate('apoio-registrando') || 'Registrando apoio...';
 
   try {
     // Firestore
@@ -132,7 +132,7 @@ async function registerSupport() {
         updatedAt: firebase.firestore.FieldValue.serverTimestamp()
       }, { merge: true });
 
-      if (status) status.textContent = translate('apoio_ja_feito') || '✅ Obrigado! Seu apoio foi registrado.';
+      if (status) status.textContent = translate('apoio-ja-feito') || '✅ Obrigado! Seu apoio foi registrado.';
       await loadSupporters();
       return;
     }
@@ -142,11 +142,11 @@ async function registerSupport() {
     const next = prev + 1;
     localStorage.setItem('apoios_local_count', String(next));
 
-    if (status) status.textContent = (translate('apoio_ja_feito') || '✅ Obrigado! Seu apoio foi registrado.') + ' (local)';
+    if (status) status.textContent = (translate('apoio-ja-feito') || '✅ Obrigado! Seu apoio foi registrado.') + ' (local)';
     await loadSupporters();
   } catch (e) {
     console.error('Erro ao registrar apoio:', e);
-    if (status) status.textContent = translate('apoio_erro') || '❌ Erro ao registrar. Tente novamente.';
+    if (status) status.textContent = translate('apoio-erro') || '❌ Erro ao registrar. Tente novamente.';
   } finally {
     setTimeout(() => {
       if (btn) btn.disabled = false;
@@ -155,9 +155,9 @@ async function registerSupport() {
   }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    4. SISTEMA DE TRADUÇÃO
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Obtém tradução do idioma atual
@@ -183,7 +183,7 @@ function setLanguage(lang) {
     if (!btn) return;
 
     const isActive = l === lang;
-    btn.classList.toggle('active', isActive);
+    btn.classList.toggle('btn-ativo', isActive);
     btn.setAttribute('aria-pressed', String(isActive));
   });
 
@@ -196,9 +196,9 @@ function setLanguage(lang) {
   loadSupporters();
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    5. TEMAS VISUAIS
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Define tema visual do site
@@ -220,11 +220,11 @@ function setTheme(theme) {
     if (!btn) return;
 
     const isActive =
-      (theme === 'padrao' && t === 'colorido') ||
+      (theme === 'colorido' && t === 'colorido') ||
       (theme === 'branco' && t === 'branco') ||
       (theme === 'preto' && t === 'preto');
 
-    btn.classList.toggle('active', isActive);
+    btn.classList.toggle('btn-ativo', isActive);
     btn.setAttribute('aria-pressed', String(isActive));
   });
 }
@@ -233,13 +233,13 @@ function setTheme(theme) {
  * Carrega tema salvo
  */
 function applySavedTheme() {
-  const theme = localStorage.getItem('site_theme') || 'padrao';
+  const theme = localStorage.getItem('site_theme') || 'colorido';
   setTheme(theme);
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    6. TAMANHO DO TEXTO
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Altera tamanho da fonte
@@ -247,7 +247,7 @@ function applySavedTheme() {
 function changeFontSize(delta) {
   const root = document.documentElement;
   const current = parseFloat(getComputedStyle(root).fontSize) || 16;
-  const next = Math.max(12, Math.min(24, current + delta));
+  const next = Math.max(12, Math.min(28, current + delta));
 
   root.style.fontSize = next + 'px';
   localStorage.setItem('site_font_size', String(next));
@@ -263,9 +263,9 @@ function applySavedFontSize() {
   }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    7. NARRAÇÃO POR VOZ
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Alterna narração de voz
@@ -293,7 +293,7 @@ function toggleNarration() {
   )
     .map(n => n.textContent.trim())
     .filter(Boolean)
-    .slice(0, 30)
+    .slice(0, 50)
     .join('. ');
 
   if (!content) {
@@ -305,7 +305,7 @@ function toggleNarration() {
   const lang = localStorage.getItem('site_lang') || 'pt';
 
   narrationUtterance.lang = lang === 'pt' ? 'pt-BR' : lang === 'es' ? 'es-ES' : 'en-US';
-  narrationUtterance.rate = 1;
+  narrationUtterance.rate = 0.9;
   narrationUtterance.pitch = 1;
   narrationUtterance.volume = 1;
 
@@ -313,9 +313,9 @@ function toggleNarration() {
   if (btn) btn.setAttribute('aria-pressed', 'true');
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    8. MENU MÓVEL
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Configura comportamento do menu móvel
@@ -342,9 +342,9 @@ function setupMobileMenu() {
   });
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    9. FORMULÁRIO DE CONTATO
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Configura validação e envio do formulário de contato
@@ -360,33 +360,31 @@ function setupContactForm() {
     const email = document.getElementById('campo-email');
     const mensagem = document.getElementById('campo-mensagem');
     const erroNome = document.getElementById('erro-nome');
-    const erroEmail = document.getElementById('erro-email');
     const erroMsg = document.getElementById('erro-msg');
     const retorno = document.getElementById('form-retorno');
 
     // Limpa erros anteriores
-    erroNome.textContent = '';
-    erroEmail.textContent = '';
-    erroMsg.textContent = '';
-    retorno.textContent = '';
+    if (erroNome) erroNome.textContent = '';
+    if (erroMsg) erroMsg.textContent = '';
+    if (retorno) retorno.textContent = '';
 
     let isValid = true;
 
     // Validação de nome
     if (!nome.value.trim()) {
-      erroNome.textContent = getTranslation('erro-nome') || 'Por favor, informe seu nome completo.';
+      if (erroNome) erroNome.textContent = getTranslation('erro-nome') || 'Por favor, informe seu nome completo.';
       isValid = false;
     }
 
     // Validação de email (se preenchido)
     if (email.value.trim() && !isValidEmail(email.value)) {
-      erroEmail.textContent = getTranslation('erro-email') || 'E-mail inválido.';
+      if (erroMsg) erroMsg.textContent = getTranslation('erro-email') || 'E-mail inválido.';
       isValid = false;
     }
 
     // Validação de mensagem
     if (!mensagem.value.trim()) {
-      erroMsg.textContent = getTranslation('erro-msg') || 'A sugestão não pode ficar vazia.';
+      if (erroMsg) erroMsg.textContent = getTranslation('erro-msg') || 'A sugestão não pode ficar vazia.';
       isValid = false;
     }
 
@@ -403,14 +401,18 @@ function setupContactForm() {
     localStorage.setItem('sugestoes', JSON.stringify(submissions));
 
     // Feedback visual
-    retorno.textContent = getTranslation('form-sucesso') || 'Obrigado! Sua sugestão foi enviada com sucesso.';
-    retorno.classList.add('success');
+    if (retorno) {
+      retorno.textContent = getTranslation('form-sucesso') || 'Obrigado! Sua sugestão foi enviada com sucesso.';
+      retorno.classList.add('success');
+    }
 
     form.reset();
 
     setTimeout(() => {
-      retorno.textContent = '';
-      retorno.classList.remove('success');
+      if (retorno) {
+        retorno.textContent = '';
+        retorno.classList.remove('success');
+      }
     }, 4000);
   });
 }
@@ -423,15 +425,15 @@ function isValidEmail(email) {
   return regex.test(email);
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    10. SKIP LINK
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Configura skip link para acessibilidade
  */
 function setupSkipLink() {
-  const skipLink = document.querySelector('.skip-link');
+  const skipLink = document.querySelector('.link-pular');
   if (!skipLink) return;
 
   skipLink.addEventListener('click', (e) => {
@@ -447,9 +449,9 @@ function setupSkipLink() {
   });
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    11. CONFIGURAÇÃO DE ACESSIBILIDADE
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Configura todos os controles de acessibilidade
@@ -469,7 +471,7 @@ function setupAccessibilityControls() {
   const btnBranco = document.getElementById('btn-branco');
   const btnPreto = document.getElementById('btn-preto');
 
-  if (btnColorido) btnColorido.addEventListener('click', () => setTheme('padrao'));
+  if (btnColorido) btnColorido.addEventListener('click', () => setTheme('colorido'));
   if (btnBranco) btnBranco.addEventListener('click', () => setTheme('branco'));
   if (btnPreto) btnPreto.addEventListener('click', () => setTheme('preto'));
 
@@ -485,9 +487,9 @@ function setupAccessibilityControls() {
   if (btnNarrar) btnNarrar.addEventListener('click', toggleNarration);
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    12. INICIALIZAÇÃO GERAL
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 /**
  * Carrega estado salvo da UI
@@ -526,9 +528,9 @@ function initializeApp() {
   console.log('✓ Agrinho 2026 inicializado com sucesso');
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────
    13. EXECUÇÃO
-   ───────────────────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────────────── */
 
 // Inicia quando o DOM estiver pronto
 if (document.readyState === 'loading') {
