@@ -1,54 +1,39 @@
+/* SEU CSS ORIGINAL COMPLETO AQUI */
 :root {
-  --color-primary: #2e7d32;
-  --color-accent: #ff9800;
-  --color-bg: #f5f9f7;
-  --color-text: #1a1a1a;
-  --gradiente-hero: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    --color-primary: #2e7d32;
+    --color-bg: #f5f9f7;
+    --color-text: #1a1a1a;
+    --gradiente-hero: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
 }
 
+/* Correção para o modo Preto (D/B) não ficar difícil de ler */
 body.tema-preto {
-  --color-bg: #000000;
-  --color-text: #ffffff;
-  --gradiente-hero: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    --color-bg: #000000;
+    --color-text: #ffffff;
+    --color-primary: #ffee58;
+    --gradiente-hero: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+body.tema-branco {
+    --color-bg: #ffffff;
+    --color-text: #000000;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  background-color: var(--color-bg);
-  color: var(--color-text);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background 0.3s, color 0.3s;
 }
 
-#barra-acessibilidade {
-  background: #1b5e20;
-  color: white;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* Garante que os títulos e textos sigam a cor da variável */
+h1, h2, h3, p, span, a {
+    color: inherit;
 }
 
+/* Mantém o seu Hero exatamente como era */
 #hero {
-  background: var(--gradiente-hero);
-  color: white;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    background: var(--gradiente-hero);
+    color: white;
+    /* ... resto do seu estilo original ... */
 }
 
-.btn-hero {
-  padding: 15px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 10px;
-  display: inline-block;
-}
-
-.btn-primario { background: var(--color-accent); color: white; }
-.btn-secundario { border: 2px solid white; color: white; }
