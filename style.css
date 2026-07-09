@@ -38,6 +38,9 @@ h1, h2, h3, p, span, label {
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .btn-acesso {
@@ -53,6 +56,17 @@ h1, h2, h3, p, span, label {
   background: white;
   color: #1b5e20;
   font-weight: bold;
+}
+
+#cabecalho {
+  background: var(--color-card);
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#menu-nav {
+  display: flex;
+  gap: 15px;
 }
 
 #menu-nav.active {
