@@ -1,39 +1,33 @@
-/* SEU CSS ORIGINAL COMPLETO AQUI */
 :root {
-    --color-primary: #2e7d32;
-    --color-bg: #f5f9f7;
-    --color-text: #1a1a1a;
-    --gradiente-hero: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+  --color-primary: #2e7d32;
+  --color-bg: #f5f9f7;
+  --color-text: #1a1a1a;
 }
 
-/* Correção para o modo Preto (D/B) não ficar difícil de ler */
 body.tema-preto {
-    --color-bg: #000000;
-    --color-text: #ffffff;
-    --color-primary: #ffee58;
-    --gradiente-hero: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-primary: #ffee58;
 }
 
 body.tema-branco {
-    --color-bg: #ffffff;
-    --color-text: #000000;
+  --color-bg: #ffffff;
+  --color-text: #000000;
 }
 
 body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    transition: background 0.3s, color 0.3s;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.3s;
 }
 
-/* Garante que os títulos e textos sigam a cor da variável */
-h1, h2, h3, p, span, a {
-    color: inherit;
+/* Garante que o texto seja sempre visível */
+h1, h2, p, span, a {
+  color: var(--color-text) !important;
 }
 
-/* Mantém o seu Hero exatamente como era */
-#hero {
-    background: var(--gradiente-hero);
-    color: white;
-    /* ... resto do seu estilo original ... */
+#hero h1, #hero p {
+  color: white !important; /* No Hero o texto é sempre branco por causa do fundo verde */
 }
 
