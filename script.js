@@ -18,14 +18,14 @@ async function loadSupporters() {
   const lang = localStorage.getItem('site_lang') || 'pt';
   const texts = TRANSLATIONS[lang];
   
+  let count = 0;
   if (usingFirestore) {
     const doc = await db.collection('apoios').doc('total').get();
-    const count = doc.exists ? doc.data().quantidade : 0;
-    el.textContent = texts['apoio-contador'].replace('{N}', count);
+    count = doc.exists ? doc.data().quantidade : 0;
   } else {
-    const count = localStorage.getItem('apoios_local') || 0;
-    el.textContent = texts['apoio-contador'].replace('{N}', count);
+    count = localStorage.getItem('apoios_local') || 0;
   }
+  el.textContent = texts['apoio-contador'].replace('{N}', count);
 }
 
 function setLanguage(lang) {
