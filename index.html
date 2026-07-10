@@ -1,87 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Agrinho 2026 — Agro Forte, Futuro Sustentável</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Concurso Agrinho 2026 — Agro forte, futuro sustentável. Projeto do Colégio Estadual Vinícius de Morais (PR)." />
+  <title id="page_title">Agrinho 2026 — Agro Forte, Futuro Sustentável</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="barra-acessibilidade">
-        <div class="acesso-grupo">
-            <span id="label-idioma">Idioma:</span>
-            <button id="btn-pt" class="btn-acesso btn-ativo">PT</button>
-            <button id="btn-en" class="btn-acesso">EN</button>
-            <button id="btn-es" class="btn-acesso">ES</button>
-        </div>
-        <div class="acesso-grupo">
-            <span id="label-visual">Visual:</span>
-            <button id="btn-colorido" class="btn-acesso btn-ativo">Padrão</button>
-            <button id="btn-branco" class="btn-acesso">L/W</button>
-            <button id="btn-preto" class="btn-acesso">D/B</button>
-        </div>
-        <div class="acesso-grupo">
-            <span id="label-texto">Texto:</span>
-            <button id="btn-Amais" class="btn-acesso">A+</button>
-            <button id="btn-Amenos" class="btn-acesso">A−</button>
-        </div>
-        <div class="acesso-grupo">
-            <button id="btn-narrar" class="btn-acesso">🔊 Narrar Site</button>
-        </div>
+
+  <div id="barra-acessibilidade" role="toolbar" aria-label="Barra de Acessibilidade">
+    <div class="acesso-grupo">
+      <span class="acesso-label" id="label_idioma">Idioma:</span>
+      <button class="btn-acesso btn-ativo" id="btn-pt">PT</button>
+      <button class="btn-acesso" id="btn-en">EN</button>
+      <button class="btn-acesso" id="btn-es">ES</button>
     </div>
+    <div class="acesso-grupo">
+      <span class="acesso-label" id="label_visual">Visual:</span>
+      <button class="btn-acesso btn-ativo" id="btn-colorido">Padrão</button>
+      <button class="btn-acesso" id="btn-branco">L/W</button>
+      <button class="btn-acesso" id="btn-preto">D/B</button>
+    </div>
+    <div class="acesso-grupo">
+      <span class="acesso-label" id="label_texto">Texto:</span>
+      <button class="btn-acesso" id="btn-Amais">A+</button>
+      <button class="btn-acesso" id="btn-Amenos">A−</button>
+    </div>
+    <div class="acesso-grupo">
+      <button class="btn-acesso" id="btn-narrar">🔊 Narrar Site</button>
+    </div>
+  </div>
 
-    <header id="cabecalho">
-        <div class="header-inner">
-            <a href="#hero" class="logo-area">
-                <img src="imagens/logo-agrinho.png" alt="Logo Agrinho" class="logo-img">
-                <div class="logo-texto">
-                    <span class="logo-titulo" id="logo-titulo">Agrinho 2026</span>
-                    <span class="logo-subtitulo" id="logo-subtitulo">SENAR · Paraná</span>
-                </div>
-            </a>
-            <nav id="menu-nav">
-                <a href="#sobre" id="nav-sobre">Sobre</a>
-                <a href="#tema" id="nav-tema">Tema</a>
-                <a href="#tecnologias" id="nav-tecnologias">Tecnologias</a>
-                <a href="#video" id="nav-video">Vídeo</a>
-                <a href="#apoio" id="nav-apoio">Apoiar</a>
-                <a href="#contato" id="nav-contato">Contato</a>
-            </nav>
+  <header id="cabecalho">
+    <div class="header-inner">
+      <a href="#hero" class="logo-area">
+        <span class="logo-icone">🌱</span>
+        <div class="logo-texto">
+          <span class="logo-titulo" id="logo_titulo">Agrinho 2026</span>
+          <span class="logo-subtitulo" id="logo_subtitulo">SENAR · Paraná</span>
         </div>
-    </header>
+      </a>
+      <nav id="menu-nav">
+        <a href="#sobre" id="nav_sobre">Sobre</a>
+        <a href="#tema" id="nav_tema">Tema</a>
+        <a href="#tecnologias" id="nav_tecnologias">Tecnologias</a>
+        <a href="#video" id="nav_video">Vídeo</a>
+        <a href="#apoio" id="nav_apoio">Apoiar</a>
+        <a href="#contato" id="nav_contato">Contato</a>
+      </nav>
+      <button class="btn-menu-mobile" id="btn-hamburger">☰</button>
+    </div>
+  </header>
 
+  <main id="conteudo-principal">
     <section id="hero">
+      <div class="hero-overlay">
         <div class="hero-conteudo">
-            <p class="hero-eyebrow" id="hero-eyebrow">Concurso Agrinho 2026</p>
-            <h1 id="hero-titulo">Agro forte, futuro sustentável</h1>
-            <p class="hero-subtitulo" id="hero-subtitulo">Equilíbrio entre produção e meio ambiente</p>
-            <div class="hero-botoes">
-                <a href="#sobre" class="btn-hero btn-primario" id="hero-btn-conhecer">Conhecer o Projeto</a>
-                <a href="#apoio" class="btn-hero btn-secundario" id="hero-btn-apoiar">👍 Apoiar Agora</a>
-            </div>
+          <p class="hero-eyebrow" id="hero_eyebrow">Concurso Agrinho 2026</p>
+          <h1 id="hero_titulo">Agro forte, futuro sustentável</h1>
+          <p class="hero-subtitulo" id="hero_subtitulo">Equilíbrio entre produção e meio ambiente</p>
+          <div class="hero-botoes">
+            <a href="#sobre" class="btn-hero btn-primario" id="hero_btn_conhecer">Conhecer o Projeto</a>
+            <a href="#apoio" class="btn-hero btn-secundario" id="hero_btn_apoiar">👍 Apoiar Agora</a>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="sobre">
-        <div class="secao-inner">
-            <p class="secao-eyebrow" id="sobre-eyebrow">O Programa</p>
-            <h2 id="sobre-titulo">O que é o Agrinho?</h2>
-            <p id="sobre-p1">O Programa Agrinho é uma iniciativa do SENAR Paraná que existe há mais de 25 anos...</p>
-            <p id="sobre-p3">Este site foi criado como projeto de participação do Colégio Estadual Vinícius de Morais (PR )...</p>
+      <div class="secao-inner">
+        <p class="secao-eyebrow" id="sobre_eyebrow">O Programa</p>
+        <h2 id="sobre_titulo">O que é o Agrinho?</h2>
+        <div class="sobre-texto">
+          <p id="sobre_p1">O Programa Agrinho é uma iniciativa do SENAR Paraná...</p>
+          <p id="sobre_p2">Em 2026, o tema convida estudantes a refletirem...</p>
+          <p id="sobre_p3">Este site foi criado como projeto de participação do Colégio Estadual Vinícius de Morais (PR).</p>
         </div>
+      </div>
     </section>
 
-    <!-- ... (Mantenha todas as outras seções exatamente como no original) ... -->
+    <section id="apoio">
+      <div class="secao-inner">
+        <h2 id="apoio_titulo">Apoie Este Projeto</h2>
+        <div class="apoio-card">
+          <p id="texto-apoios" class="texto-apoios">Este projeto já recebeu 0 apoios!</p>
+          <button id="btn-apoiar" class="btn-apoiar">
+            <span id="apoio_btn">Apoiar Projeto</span>
+          </button>
+        </div>
+      </div>
+    </section>
 
-    <footer id="rodape">
-        <p id="rodape-copy">© 2026 Concurso Agrinho — SENAR Paraná — Colégio Estadual Vinícius de Morais (PR). Projeto educativo sem fins lucrativos.</p>
-    </footer>
+    <section id="contato">
+      <div class="secao-inner">
+        <h2 id="contato_titulo">Deixe sua Sugestão</h2>
+        <div class="form-grid">
+          <div class="form-grupo">
+            <label for="campo-nome" id="label_nome">Nome completo</label>
+            <input type="text" id="campo-nome" placeholder="Digite seu nome completo" />
+          </div>
+          <div class="form-grupo form-grupo-largo">
+            <label for="campo-mensagem" id="label_mensagem">Sua sugestão</label>
+            <textarea id="campo-mensagem" rows="5" placeholder="Escreva sua sugestão aqui..."></textarea>
+          </div>
+          <button class="btn-enviar" id="btn-enviar">
+            <span id="btn_enviar">Enviar Sugestão</span>
+          </button>
+          <div id="form-retorno"></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
+  <footer id="rodape">
+    <div class="rodape-inner">
+      <p class="rodape-copy" id="rodape_copy">© 2026 Concurso Agrinho — SENAR Paraná — Colégio Estadual Vinícius de Morais (PR).</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
