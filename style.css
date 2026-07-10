@@ -1,33 +1,77 @@
 :root {
-  --color-primary: #2e7d32;
-  --color-bg: #f5f9f7;
-  --color-text: #1a1a1a;
+  --cor-primaria: #2e7d32;
+  --cor-fundo: #f1f8e9;
+  --cor-texto: #212121;
+  --cor-card: #ffffff;
 }
 
-body.tema-preto {
-  --color-bg: #000000;
-  --color-text: #ffffff;
-  --color-primary: #ffee58;
-}
-
+/* MODO BRANCO (L/W) */
 body.tema-branco {
-  --color-bg: #ffffff;
-  --color-text: #000000;
+  --cor-fundo: #ffffff;
+  --cor-texto: #000000;
+  --cor-card: #ffffff;
+}
+
+/* MODO PRETO (D/B) */
+body.tema-preto {
+  --cor-fundo: #000000;
+  --cor-texto: #ffffff;
+  --cor-card: #1a1a1a;
+  --cor-primaria: #ffee58;
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: 'Montserrat', sans-serif;
-  transition: 0.3s;
+  font-family: sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: all 0.3s ease;
 }
 
-/* Garante que o texto seja sempre visível */
-h1, h2, p, span, a {
-  color: var(--color-text) !important;
+/* Garante legibilidade forçada nos modos especiais */
+body.tema-preto h1, body.tema-preto h2, body.tema-preto p, body.tema-preto span {
+  color: #ffffff !important;
 }
 
-#hero h1, #hero p {
-  color: white !important; /* No Hero o texto é sempre branco por causa do fundo verde */
+body.tema-branco h1, body.tema-branco h2, body.tema-branco p, body.tema-branco span {
+  color: #000000 !important;
 }
 
+#barra-acessibilidade {
+  background: #1b5e20;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.btn-acesso {
+  border: 1px solid white;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-acesso.btn-ativo {
+  background: white;
+  color: #1b5e20;
+}
+
+#hero {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.btn-hero, .btn-apoiar, .btn-enviar {
+  background: var(--cor-primaria);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+}
