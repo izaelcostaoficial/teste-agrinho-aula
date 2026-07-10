@@ -1,4 +1,4 @@
-'use strict';
+'use strict';         
 
 var idiomaAtivo = 'pt';
 var totalApoios = parseInt(localStorage.getItem('agrinho_apoios_2026') || 0);
